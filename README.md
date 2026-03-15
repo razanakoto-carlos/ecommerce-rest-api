@@ -26,24 +26,23 @@ A REST API for an e-commerce application built with **Node.js**, **Express** and
 
 ---
 
-<!-- ## 📁 Project Structure
+📁 Project Structure
 
 ```
 node-mongo-ecommerce-api/
 ├── src/
-│   ├── config/         # DB connection, environment config
 │   ├── controllers/    # Route logic (user, product, cart, order)
 │   ├── middlewares/    # Auth middleware, error handler
 │   ├── models/         # Mongoose schemas
 │   ├── routes/         # Express routers
-│   └── app.js          # App entry point
+│   └── server.js       # App entry point
 ├── .env
 ├── .gitignore
 ├── package.json
 └── README.md
-``` -->
+```
 
-<!-- --- -->
+---
 
 ## 🚀 Getting Started
 
@@ -78,23 +77,21 @@ JWT_SECRET=your_secret_key
 
 ```bash
 # Development
-npm install
-
 npm run dev
 
 ```
 
 ---
 
-<!-- ## 📡 API Endpoints
+ ## 📡 API Endpoints
 
 ### Auth
-| Method | Endpoint            | Description         |
-|--------|---------------------|---------------------|
-| POST   | `/api/users`        | Register a new user |
-| POST   | `/api/users/login`  | Login a user        |
+| Method | Endpoint              | Description         |
+|--------|-----------------------|---------------------|
+| POST   | `/api/users/register` | Register a new user |
+| POST   | `/api/users/login`    | Login a user        |
 
-### Products
+<!-- ### Products
 | Method | Endpoint              | Description            |
 |--------|-----------------------|------------------------|
 | GET    | `/api/products`       | Get all products       |
@@ -115,10 +112,9 @@ npm run dev
 ### Payment
 | Method | Endpoint          | Description        |
 |--------|-------------------|--------------------|
-| POST   | `/api/payment`    | Process a payment  |
+| POST   | `/api/payment`    | Process a payment  | -->
 
 ---
-
 ## 🔒 Authentication
 
 Protected routes require a Bearer token in the request header:
@@ -127,4 +123,4 @@ Protected routes require a Bearer token in the request header:
 Authorization: Bearer <your_jwt_token>
 ```
 
---- -->
+---
