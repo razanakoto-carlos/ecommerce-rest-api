@@ -7,6 +7,7 @@ import categoryRouter from "./routes/category.js"
 
 const app = express();
 app.use(express.json());
+app.use("/upload/category", express.static("upload/category"))
 
 mongoose.connect(process.env.MONGO_URI)
     .then(() => console.log("Database connected"))
