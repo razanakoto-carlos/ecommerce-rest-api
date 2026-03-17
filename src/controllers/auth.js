@@ -22,7 +22,7 @@ const loginSchema = Joi.object({
 })
 
 const generateToken = (data) => {
-    return jwt.sign({ id: data }, process.env.JWT_SECRET, { expiresIn: "7d" });
+    return jwt.sign({ _id: data }, process.env.JWT_SECRET, { expiresIn: "7d" });
 }
 
 const register = async (req, res) => {
@@ -50,13 +50,14 @@ const register = async (req, res) => {
             deliveryAdress: deliveryAdress
         });
 
-        user.save();
+        const userRegister =  user.save();
 
-        const token = generateToken(existingEmail.id)
+        const token = generateToken(userRegister.id)
 
         res.status(201).json(token);
 
     } catch (err) {
+        console.log(err)
         res.status(400).json({ error: "Bad request", message: err })
     }
 }
@@ -129,7 +130,7 @@ const login = async (req, res) => {
 
     } catch (err) {
         console.log(err)
-        res.status(400).json({ error: "Bad request" })
+        res.status(400).json({ error: "Bad request" , message:err})
     }
 }
 

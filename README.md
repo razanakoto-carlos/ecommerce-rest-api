@@ -31,6 +31,7 @@ A REST API for an e-commerce application built with **Node.js**, **Express** and
 ```
 node-mongo-ecommerce-api/
 ├── src/
+│   ├── config/         # config (google auth)
 │   ├── controllers/    # Route logic (user, product, cart, order)
 │   ├── middlewares/    # Auth middleware, error handler
 │   ├── models/         # Mongoose schemas
@@ -71,6 +72,9 @@ Edit `.env` with your values:
 PORT=5000
 MONGO_URI=mongodb://localhost:27017/ecommerce
 JWT_SECRET=your_secret_key
+GOOGLE_CLIENT_ID=your_google_client_id
+GOOGLE_CLIENT_SECRET=your_google_client_secret
+GOOGLE_CALLBACK_URL=http://exemple/auth/google/callback
 ```
 
 ### 4. Start the server
@@ -86,18 +90,27 @@ npm run dev
  ## 📡 API Endpoints
 
 ### Auth
+| Method | Endpoint              | Description               |
+|--------|-----------------------|---------------------------|
+| POST   | `/auth/register`      | Register a new user       |
+| POST   | `/auth/login`         | Login a user              |
+| POST   | `/auth/google`        | Login with google account |
+
+### Category
 | Method | Endpoint              | Description         |
 |--------|-----------------------|---------------------|
-| POST   | `/api/users/register` | Register a new user |
-| POST   | `/api/users/login`    | Login a user        |
+| POST   | `/category`           | Add new category    |
+| GET    | `/category`           | get all category    |
 
-<!-- ### Products
-| Method | Endpoint              | Description            |
-|--------|-----------------------|------------------------|
-| GET    | `/api/products`       | Get all products       |
-| GET    | `/api/products/:id`   | Get a single product   |
 
-### Cart
+
+ ### Products
+| Method | Endpoint              | Description                   |
+|--------|-----------------------|-------------------------------|
+| POST   | `/product`            | add item (with role = seller) |
+| GET    | `/product`            | Get all products              |
+
+<!-- ### Cart
 | Method | Endpoint            | Description           |
 |--------|---------------------|-----------------------|
 | POST   | `/api/cart`         | Add item to cart      |

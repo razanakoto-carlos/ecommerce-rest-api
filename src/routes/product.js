@@ -1,14 +1,14 @@
 import { Router } from "express";
-import { getCategory, createCategory } from "../controllers/category.js";
-import multer from "multer";
+import { createProduct, getProducts } from "../controllers/product.js";
+import {checkSeller} from "../middleware/checkRole.js";
 import authMiddleware from "../middleware/authMiddleware.js";
-import { checkAdmin } from "../middleware/checkRole.js";
+import multer from "multer";
 
-const router = Router();
+const router = Router()
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        cb(null, "upload/category")
+        cb(null, "upload/products")
     },
     filename: (req, file, cb) => {
         const timestamp = Date.now()
@@ -34,9 +34,7 @@ const upload = multer({
     }
 })
 
-router.post('/', authMiddleware, checkAdmin, upload.single("icon"), createCategory);
-
-router.get('/', getCategory);
-
+router.post('/',authMiddleware, checkSeller, upload.array("images", 8) ,createProduct)
+router.get('/',getProducts)
 
 export default router;

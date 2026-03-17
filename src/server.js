@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import './config/passport.js'
 import userRouter from './routes/auth.js';
 import categoryRouter from "./routes/category.js"
+import productRouter from "./routes/product.js"
 
 
 const app = express();
@@ -15,6 +16,7 @@ mongoose.connect(process.env.MONGO_URI)
 
 app.use('/auth', userRouter);
 app.use('/category', categoryRouter);
+app.use('/product',productRouter);
 
 const PORT = process.env.PORT || 3000
 app.listen(PORT, () => {
