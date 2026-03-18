@@ -105,10 +105,12 @@ npm run dev
 
 
  ### Products
-| Method | Endpoint              | Description                   |
-|--------|-----------------------|-------------------------------|
-| POST   | `/product`            | add item (with role = seller) |
-| GET    | `/product`            | Get all products              |
+| Method | Endpoint              | Description                                    |
+|--------|-----------------------|------------------------------------------------|
+| GET    | `/product`            | Get all products                               |
+| GET    | `/product/productId`  | Get a single product                           |
+| POST   | `/product`            | add item (with role = seller)                  |
+| DELETE | `/product/productId`  | delete a product (with role = admin or seller) |
 
 <!-- ### Cart
 | Method | Endpoint            | Description           |
