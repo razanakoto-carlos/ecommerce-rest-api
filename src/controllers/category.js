@@ -18,10 +18,15 @@ const createCategory = async (req, res) => {
     }
 }
 
-const getCategory = async (req, res) =>{
-    const category = await Category.find().sort("name")
-    res.json(category)
+const getCategory = async (req, res) => {
+    try {
+        const category = await Category.find().sort("name")
+        res.json(category)
+    } catch (error) {
+        return res.status(500).json({ message: "Internal Server Error!" })
+    }
+
 }
 
 
-export { getCategory,createCategory }
+export { getCategory, createCategory }

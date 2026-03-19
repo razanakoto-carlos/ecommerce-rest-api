@@ -112,12 +112,13 @@ npm run dev
 | POST   | `/product`            | add item (with role = seller)                  |
 | DELETE | `/product/productId`  | delete a product (with role = admin or seller) |
 
-<!-- ### Cart
-| Method | Endpoint            | Description           |
-|--------|---------------------|-----------------------|
-| POST   | `/api/cart`         | Add item to cart      |
-| DELETE | `/api/cart/:itemId` | Remove item from cart |
+### Cart
+| Method | Endpoint            | Description            |
+|--------|---------------------|------------------------|
+| POST   | `/cart/:productId`  | Add product to cart    |
+| get    | `/cart`             | get user cart          |
 
+<!-- 
 ### Orders
 | Method | Endpoint       | Description           |
 |--------|----------------|-----------------------|

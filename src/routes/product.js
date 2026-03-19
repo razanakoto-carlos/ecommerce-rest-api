@@ -34,10 +34,9 @@ const upload = multer({
     }
 })
 
-router.post('/', authMiddleware, checkSeller, upload.array("images", 8), createProduct)
 router.get('/', authMiddleware, getProducts)
 router.get('/:productId', authMiddleware, getProduct)
+router.post('/', authMiddleware, checkSeller, upload.array("images", 8), createProduct)
 router.delete('/:productId', authMiddleware, deleteProduct)
-
 
 export default router;

@@ -35,7 +35,6 @@ const upload = multer({
 })
 
 router.post('/', authMiddleware, checkAdmin, upload.single("icon"), createCategory);
-
 router.get('/', getCategory);
 
 
