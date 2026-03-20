@@ -113,22 +113,11 @@ npm run dev
 | DELETE | `/product/productId`  | delete a product (with role = admin or seller) |
 
 ### Cart
-| Method | Endpoint            | Description            |
-|--------|---------------------|------------------------|
-| POST   | `/cart/:productId`  | Add product to cart    |
-| get    | `/cart`             | get user cart          |
-
-<!-- 
-### Orders
-| Method | Endpoint       | Description           |
-|--------|----------------|-----------------------|
-| GET    | `/api/orders`  | Get order history     |
-| POST   | `/api/orders`  | Place an order        |
-
-### Payment
-| Method | Endpoint          | Description        |
-|--------|-------------------|--------------------|
-| POST   | `/api/payment`    | Process a payment  | -->
+| Method | Endpoint                 | Description                       |
+|--------|--------------------------|-------------------------------|
+| get    | `/cart`                  | get user cart                 |
+| POST   | `/cart/:productId`       | Add product to cart           |
+| PATCH  | `cart/remove/:productId` | remove single product in cart |
 
 ---
 ## 🔒 Authentication
