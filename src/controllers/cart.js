@@ -78,9 +78,47 @@ const getCarts = async (req, res) => {
 
         res.json(cart)
     } catch (error) {
-        console.error(error)
         return res.status(500).json({ message: "Internal Server Error" })
     }
 }
 
-export { createCart, getCarts }
+const removeCart = async (req, res) => {
+    try {
+        const productId = req.params.productId
+        const product = await Product.findById(productId)
+
+        if (!product) {
+            return res.status(400).json({ message: "Product not found" })
+        }
+
+        const cart = await Cart.findOne({ user: req.user._id })
+
+        if (!cart) {
+            return res.status(400).json({ message: "Cart not found" })
+        }
+
+        const index = cart.product.findIndex((product) => product.productId.toString() === productId)
+
+        if (index === -1) {
+            return res.status(404).json({ message: "Product not found in cart" })
+        }
+
+        if (cart.products.lengh === 1 && cart.products[index].productId.toString() === productId) {
+            await Cart.findByIdAndDelete(cart._id)
+            res.json({ message: "Product remove successfully", cart: cart })
+        }
+
+        cart.totalProducts -= cart.products[index].quantity
+        cart.totalCartPrice -= cart.products[index].quantity * cart.products[index].price
+
+        cart.products.splice(index, 1)
+
+        await cart.save()
+
+        res.json({ message: "Product remove successfully", cart: cart })
+    } catch (error) {
+        return res.status(500).json({ message: "Internal Server Error" })
+    }
+}
+
+export { createCart, getCarts, removeCart }
