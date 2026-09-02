@@ -65,7 +65,7 @@ export default function SellerNewProduct() {
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6">
-      <p className="font-mono text-xs uppercase tracking-wide text-accent">Seller dashboard</p>
+      <p className="font-mono text-xs uppercase tracking-wide text-select-deep">Seller dashboard</p>
       <h1 className="mt-2 font-display text-2xl text-ink sm:text-3xl">List a new product</h1>
       <p className="mt-2 text-sm text-muted">Fill in the details buyers need to say yes.</p>
 

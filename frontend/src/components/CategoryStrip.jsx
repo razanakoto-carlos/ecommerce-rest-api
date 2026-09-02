@@ -8,8 +8,8 @@ export default function CategoryStrip({ categories, active, onSelect }) {
         onClick={() => onSelect(null)}
         className={`flex shrink-0 items-center gap-2 rounded-full border px-4 py-2 font-mono text-xs uppercase tracking-wide transition ${
           !active
-            ? "border-accent bg-accent text-accent-ink"
-            : "border-line text-muted hover:border-accent/60 hover:text-ink"
+            ? "border-select bg-select text-ink"
+            : "border-line text-muted hover:border-select-deep/50 hover:text-ink"
         }`}
       >
         All

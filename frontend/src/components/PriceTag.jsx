@@ -6,7 +6,7 @@ export default function PriceTag({ price, size = "md" }) {
   return (
     <div className="relative -rotate-3 transition-transform duration-300 group-hover:rotate-0">
       <div
-        className={`bg-accent text-accent-ink font-mono font-bold leading-none shadow-[0_6px_16px_rgba(255,122,26,0.35)] ${sizing}`}
+        className={`bg-accent text-accent-ink font-mono font-bold leading-none shadow-[0_6px_16px_rgba(36,36,38,0.28)] ${sizing}`}
         style={{ clipPath: "polygon(10px 0, 100% 0, 100% 100%, 10px 100%, 0 50%)" }}
       >
         {formatPrice(price)}

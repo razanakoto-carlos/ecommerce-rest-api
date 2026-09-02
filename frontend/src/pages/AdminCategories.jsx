@@ -51,7 +51,7 @@ export default function AdminCategories() {
 
   return (
     <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6">
-      <p className="font-mono text-xs uppercase tracking-wide text-accent">Admin</p>
+      <p className="font-mono text-xs uppercase tracking-wide text-select-deep">Admin</p>
       <h1 className="mt-2 font-display text-2xl text-ink sm:text-3xl">Categories</h1>
       <p className="mt-2 text-sm text-muted">Add the shelves buyers filter by.</p>
 

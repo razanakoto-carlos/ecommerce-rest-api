@@ -90,7 +90,7 @@ export default function Navbar() {
               >
                 <div className="border-b border-line px-4 py-3">
                   <p className="truncate text-sm text-ink">{user?.email}</p>
-                  <p className="mt-1 font-mono text-[10px] uppercase tracking-wide text-accent">{user?.role}</p>
+                  <p className="mt-1 font-mono text-[10px] uppercase tracking-wide text-select-deep">{user?.role}</p>
                 </div>
                 <button
                   type="button"
@@ -151,7 +151,7 @@ export default function Navbar() {
                 Log out ({user?.email})
               </button>
             ) : (
-              <Link to="/login" onClick={() => setMenuOpen(false)} className="text-accent">
+              <Link to="/login" onClick={() => setMenuOpen(false)} className="text-select-deep">
                 Log in
               </Link>
             )}

@@ -59,7 +59,7 @@ export default function ProductDetail() {
           title="Product not found"
           description="This listing may have been removed or sold out permanently."
           action={
-            <Link to="/products" className="text-sm font-semibold text-accent hover:underline">
+            <Link to="/products" className="text-sm font-semibold text-select-deep hover:underline">
               Back to catalog
             </Link>
           }
@@ -124,7 +124,7 @@ export default function ProductDetail() {
                   type="button"
                   onClick={() => setActiveImage(i)}
                   className={`h-16 w-16 shrink-0 overflow-hidden rounded-lg border-2 transition ${
-                    activeImage === i ? "border-accent" : "border-line opacity-70 hover:opacity-100"
+                    activeImage === i ? "border-select-deep" : "border-line opacity-70 hover:opacity-100"
                   }`}
                 >
                   <img src={imageUrl("products", img)} alt="" className="h-full w-full object-cover" />

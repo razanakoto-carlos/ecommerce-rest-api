@@ -15,14 +15,15 @@ export default function Layout() {
         position="bottom-right"
         toastOptions={{
           style: {
-            background: "#1E1D3D",
-            color: "#F4F2FF",
-            border: "1px solid #35316B",
+            background: "#FFFFFF",
+            color: "#242426",
+            border: "1px solid #E7E0E6",
+            boxShadow: "0 12px 28px rgba(36, 36, 38, 0.12)",
             fontFamily: "Manrope, sans-serif",
             fontSize: "14px",
           },
-          success: { iconTheme: { primary: "#34E2C0", secondary: "#14132B" } },
-          error: { iconTheme: { primary: "#FF4D6D", secondary: "#14132B" } },
+          success: { iconTheme: { primary: "#24876F", secondary: "#FFFFFF" } },
+          error: { iconTheme: { primary: "#C2506D", secondary: "#FFFFFF" } },
         }}
       />
     </div>

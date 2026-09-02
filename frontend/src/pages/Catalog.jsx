@@ -76,7 +76,7 @@ export default function Catalog() {
   return (
     <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6">
       <div className="flex flex-col gap-2">
-        <p className="font-mono text-xs uppercase tracking-wide text-accent">Catalog</p>
+        <p className="font-mono text-xs uppercase tracking-wide text-select-deep">Catalog</p>
         <h1 className="font-display text-2xl text-ink sm:text-3xl">
           {search ? `Results for "${search}"` : "Everything in stock"}
         </h1>

@@ -8,7 +8,7 @@ export default function ProductCard({ product, onQuickAdd, adding }) {
   const image = imageUrl("products", product.images);
 
   return (
-    <div className="group relative flex flex-col overflow-hidden rounded-2xl border border-line bg-surface transition duration-300 hover:-translate-y-1 hover:border-accent/50 hover:shadow-[0_20px_40px_-20px_rgba(255,122,26,0.3)]">
+    <div className="group relative flex flex-col overflow-hidden rounded-2xl border border-line bg-surface transition duration-300 hover:-translate-y-1 hover:border-select-deep/40 hover:shadow-[0_20px_40px_-20px_rgba(36,36,38,0.25)]">
       <Link to={`/products/${product._id}`} className="relative block aspect-square overflow-hidden bg-surface-2">
         {image ? (
           <img

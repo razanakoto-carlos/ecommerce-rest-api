@@ -61,7 +61,7 @@ export default function Cart() {
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6">
-      <p className="font-mono text-xs uppercase tracking-wide text-accent">Cart</p>
+      <p className="font-mono text-xs uppercase tracking-wide text-select-deep">Cart</p>
       <h1 className="mt-2 font-display text-2xl text-ink sm:text-3xl">Your basket</h1>
 
       <div className="mt-8 grid gap-10 lg:grid-cols-[1fr_320px]">
@@ -123,7 +123,7 @@ export default function Cart() {
             </div>
             <div className="flex items-center justify-between border-t border-line pt-3 text-ink">
               <dt className="font-medium">Total</dt>
-              <dd className="font-mono text-lg font-semibold text-accent">{formatPrice(cart.totalCartPrice)}</dd>
+              <dd className="font-mono text-lg font-semibold text-select-deep">{formatPrice(cart.totalCartPrice)}</dd>
             </div>
           </dl>
 
